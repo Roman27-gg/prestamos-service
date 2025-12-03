@@ -44,12 +44,12 @@ public class LoanServiceImpl implements LoanService {
 
     @Override
     public List<LoanDto> getByEmployee(Long id) {
-        return loanrepository.findLoanByEmployee(id).stream().map(this::entityToDto).toList();
+        return loanrepository.findByEmployeeId(id).stream().map(this::entityToDto).toList();
     }
 
     @Override
     public List<LoanDto> getByEquipment(Long id) {
-        return loanrepository.findLoanByEquipment(id).stream().map(this::entityToDto).toList();
+        return loanrepository.findByEquipmentId(id).stream().map(this::entityToDto).toList();
     }
 
     @Override
